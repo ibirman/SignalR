@@ -28,7 +28,7 @@ namespace Microsoft.AspNet.SignalR.Hosting
             }
 
             // Dispose the dependency resolver on host shut down (cleanly)
-            resolver.InitializeResolverDispose(hostShutdownToken);
+            //resolver.InitializeResolverDispose(hostShutdownToken);
         }
 
         private static void InitializePerformanceCounters(this IDependencyResolver resolver, string instanceName, CancellationToken hostShutdownToken)
@@ -40,16 +40,16 @@ namespace Microsoft.AspNet.SignalR.Hosting
             }
         }
 
-        private static void InitializeResolverDispose(this IDependencyResolver resolver, CancellationToken hostShutdownToken)
-        {
-            // TODO: Guard against multiple calls to this
+		//private static void InitializeResolverDispose(this IDependencyResolver resolver, CancellationToken hostShutdownToken)
+		//{
+		//	// TODO: Guard against multiple calls to this
 
-            // When the host triggers the shutdown token, dispose the resolver
-            hostShutdownToken.SafeRegister(state =>
-            {
-                ((IDependencyResolver)state).Dispose();
-            },
-            resolver);
-        }
+		//	// When the host triggers the shutdown token, dispose the resolver
+		//	hostShutdownToken.SafeRegister(state =>
+		//	{
+		//		((IDependencyResolver)state).Dispose();
+		//	},
+		//	resolver);
+		//}
     }
 }

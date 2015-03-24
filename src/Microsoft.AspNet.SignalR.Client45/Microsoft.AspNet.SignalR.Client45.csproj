@@ -254,6 +254,7 @@
       <Link>Infrastructure\TaskAsyncHelper.cs</Link>
     </Compile>
     <Compile Include="Infrastructure\HttpClientException.cs" />
+    <Compile Include="Infrastructure\MonoUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transports\WebSockets\ClientWebSocketHandler.cs" />
     <Compile Include="Transports\WebSockets\WebSocketWrapperRequest.cs" />

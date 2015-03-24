@@ -52,6 +52,11 @@ namespace Microsoft.AspNet.SignalR.Infrastructure
 
             MethodInfo methodInfo = null;
 
+	        if (MonoUtility.IsRunningMono)
+	        {
+		        return fallback;
+	        }
+
             try
             {
                 // By default we don't want to capture the execution context,
